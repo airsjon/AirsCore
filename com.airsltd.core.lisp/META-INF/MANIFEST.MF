@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1529803815563
+Build-Jdk: 1.8.0_102
+Built-By: jon_000
+Bundle-Description: Core Lisp library for AIRS, Ltd. products.
+Bundle-DocURL: https://www.airsltd.com
+Bundle-ManifestVersion: 2
+Bundle-Name: com.airsltd.core.lisp
+Bundle-SymbolicName: com.airsltd.osgi.lisp
+Bundle-Vendor: AIRS, Ltd.
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.airsltd.core.lisp;version="0.0.1"
+Import-Package: com.airsltd.core.data;version="[0.0,1)",com.airsltd.core
+ .data.converters;version="[0.0,1)",com.airsltd.core.parse;version="[0.0
+ ,1)",org.apache.commons.logging;version="[1.2,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923

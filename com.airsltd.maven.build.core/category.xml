@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.airsltd.e4.feature.core_1.0.0.qualifier.jar" id="com.airsltd.e4.feature.core" version="1.0.0.qualifier"/>
+   <feature url="features/com.airsltd.feature.thirdparty_1.0.5.qualifier.jar" id="com.airsltd.feature.thirdparty" version="1.0.5.qualifier"/>
+   <feature url="features/com.airsltd.feature.jubula_1.0.0.qualifier.jar" id="com.airsltd.feature.jubula" version="1.0.0.qualifier"/>
+   <bundle id="com.airsltd.e4.plugin.core" version="1.0.0.qualifier"/>
+</site>

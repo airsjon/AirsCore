@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven.build.core</artifactId>
+  <name>Core Plugin Deploy</name>
+  <parent>
+  	<groupId>com.airsltd</groupId>
+  	<artifactId>maven.core.parent</artifactId>
+  	<version>0.0.4-SNAPSHOT</version>
+  	<relativePath>../com.airsltd.maven.core.parent</relativePath>
+  </parent>
+  <properties>
+    <sonar.skip>true</sonar.skip>
+  </properties>
+  <packaging>eclipse-repository</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${airsltd.maven.dependency}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+		</plugins>
+	</build>
+	<description>Store the core plugins and core plugin feature in the repository.</description>
+</project>

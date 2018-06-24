@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.airsltd.osgi</groupId>
+		<artifactId>maven</artifactId>
+		<version>0.0.4-SNAPSHOT</version>
+		<relativePath>../com.airsltd.osgi.maven/pom.xml</relativePath>
+	</parent>
+	<artifactId>maven.source</artifactId>
+	<packaging>pom</packaging>
+	<name>AIRS, Ltd. OSGI Maven build with source</name>
+	<description>Standard pom build for AIRS builds that will include source</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${airsltd.maven.source}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

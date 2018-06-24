@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1529803811349
+Build-Jdk: 1.8.0_102
+Built-By: jon_000
+Bundle-Description: Core library for AIRS, Ltd. products.
+Bundle-DocURL: https://www.airsltd.com
+Bundle-ManifestVersion: 2
+Bundle-Name: com.airsltd.core
+Bundle-SymbolicName: com.airsltd.osgi.airscore
+Bundle-Vendor: AIRS, Ltd.
+Bundle-Version: 1.0.10.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.airsltd.core;uses:="org.apache.commons.logging";vers
+ ion="1.0.10",com.airsltd.core.collections;version="1.0.10"
+Import-Package: org.apache.commons.logging;version="[1.2,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
