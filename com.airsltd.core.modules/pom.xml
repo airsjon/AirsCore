@@ -4,6 +4,7 @@
     <groupId>com.airsltd.osgi</groupId>
     <artifactId>maven.source</artifactId>
     <version>0.0.4-SNAPSHOT</version>
+    <relativePath>../com.airsltd.osgi.maven.source</relativePath>
   </parent>
   <artifactId>modules</artifactId>
   <version>0.0.1-SNAPSHOT</version>
