@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<properties>
 		<manifest-location>META-INF</manifest-location>
-		<sonar.exclusions>**/tiff/common/ui/**,**/au/com/bytecode/**</sonar.exclusions>
+		<sonar.skip>true</sonar.skip>
 	</properties>
 	<build>
 		<plugins>
@@ -27,7 +27,7 @@
               <forced>true</forced>
             </archive>
 					<instructions>
-						<Export-Package>com.airsltd.core.xml</Export-Package>
+						<Export-Package>boxbe.pub.email</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -62,11 +62,6 @@
 			<artifactId>airscore</artifactId>
 			<version>1.0.10-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>com.airsltd.osgi</groupId>
-			<artifactId>data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 	<parent>
 		<groupId>com.airsltd.osgi</groupId>
@@ -74,11 +69,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../com.airsltd.core.modules</relativePath>
 	</parent>
-	<artifactId>xml</artifactId>
+	<artifactId>thirdparty</artifactId>
 	<issueManagement>
 		<system>trac</system>
 		<url>https://www.airsltd.com/trac/OpenSource</url>
 	</issueManagement>
-	<name>com.airsltd.core.xml</name>
-	<description>Core xml library for AIRS, Ltd. products.</description>
+	<name>com.airsltd.core.thirdparty</name>
+	<description>Core thid party library for AIRS, Ltd. products.  Sometimes source is added from third parties which is provided as code only. We place that code here because it is not our intention to maintain the code.</description>
 </project>

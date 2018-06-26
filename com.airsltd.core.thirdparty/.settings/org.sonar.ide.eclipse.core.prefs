@@ -1,0 +1,7 @@
+analyseLocally=false
+eclipse.preferences.version=1
+extraProperties=sonar.exclusions\=**/tiff/common/ui/**,**/au/com/bytecode/**,**/boxbe/pub/email/**\r\nsonar.java.source\=1.8
+lastAnalysisDate=1441307747289
+projectKey=com.airsltd.osgi\:airscore
+serverUrl=http\://192.168.0.35\:9000
+version=2

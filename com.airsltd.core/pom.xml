@@ -83,7 +83,7 @@
 		<groupId>com.airsltd.osgi</groupId>
 		<artifactId>modules</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../modules</relativePath>
+		<relativePath>../com.airsltd.core.modules</relativePath>
 	</parent>
 	<artifactId>airscore</artifactId>
 	<version>1.0.10-SNAPSHOT</version>
