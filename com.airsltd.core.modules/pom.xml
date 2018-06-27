@@ -11,6 +11,9 @@
   <packaging>pom</packaging>
   <name>com.airsltd.core.modules</name>
   <description>Build the AIRS Core projects	</description>
+  <properties>
+    <sonar.skip>false</sonar.skip>
+  </properties>
   <modules>
   	<module>../com.airsltd.core</module>
   	<module>../com.airsltd.core.data</module>

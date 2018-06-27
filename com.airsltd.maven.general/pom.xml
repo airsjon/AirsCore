@@ -11,6 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.exclusions>**/tiff/common/ui/**,**/au/com/bytecode/**</sonar.exclusions>
 		<sonar.java.source>${airsltd.java.target}</sonar.java.source>
+	    <sonar.skip>true</sonar.skip>
 		<airsltd.sun.java.mail>1.5.4</airsltd.sun.java.mail>
 		<airsltd.junit>4.12</airsltd.junit>
 		<airsltd.mockito>1.10.19</airsltd.mockito>
