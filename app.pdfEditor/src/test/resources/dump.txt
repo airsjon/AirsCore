@@ -1,0 +1,61 @@
+GoDanCertificate.pdf,KentoNikaido13856.pdf,393,250,30,Kento Nikaido [13856],Times-Roman,CENTER,417,190,16,5,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoKyuCertificate.pdf,DennisMahoney11974.pdf,393,250,30,Dennis Mahoney [11974],Times-Roman,CENTER,417,190,16,7,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoKyuCertificate.pdf,TomLaflin20453.pdf,393,250,30,Tom Laflin [20453],Times-Roman,CENTER,417,190,16,5,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoDanCertificate.pdf,JoshuaLee14474.pdf,393,250,30,Joshua Lee [14474],Times-Roman,CENTER,417,190,16,5,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoKyuCertificate.pdf,RichardMoseson12191.pdf,393,250,30,Richard Moseson [12191],Times-Roman,CENTER,417,190,16,4,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoDanCertificate.pdf,SichenZhong10303.pdf,393,250,30,Sichen Zhong [10303],Times-Roman,CENTER,417,190,16,2,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+GoDanCertificate.pdf,ZhihongMa20317.pdf,393,250,30,Zhihong Ma [20317],Times-Roman,CENTER,417,190,16,5,Times-Roman,LEFT,457,113,14,2016-03-01,Times-Roman,LEFT
+2017USOpen.pdf,Open6dYangHong.pdf,406,250,30,Yang Hong,Times-Roman,CENTER,406,160,20,6 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open6dYuefangZhou.pdf,406,250,30,Yuefang Zhou [22697],Times-Roman,CENTER,406,160,20,6 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open6dEthanWang.pdf,406,250,30,Ethan Wang [23152],Times-Roman,CENTER,406,160,20,6 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open5dRuechenSun.pdf,406,250,30,Ruechen Sun,Times-Roman,CENTER,406,160,20,5 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open5dMizuoSakakibara.pdf,406,250,30,Mizuo Sakakibara,Times-Roman,CENTER,406,160,20,5 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open5dMatthewCheng.pdf,406,250,30,Matthew Cheng [20285],Times-Roman,CENTER,406,160,20,5 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open4dTylerOyakawa.pdf,406,250,30,Tyler Oyakawa [16855],Times-Roman,CENTER,406,160,20,4 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open4dSorenJaffe.pdf,406,250,30,Soren Jaffe [19705],Times-Roman,CENTER,406,160,20,4 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open4dJinzhongGu.pdf,406,250,30,Jinzhong Gu,Times-Roman,CENTER,406,160,20,4 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open3dZiqinHe.pdf,406,250,30,Ziqin He,Times-Roman,CENTER,406,160,20,3 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open3dJianuoWang.pdf,406,250,30,Jianuo Wang,Times-Roman,CENTER,406,160,20,3 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open3dZhangzeBi.pdf,406,250,30,Zhangze Bi [22686],Times-Roman,CENTER,406,160,20,3 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open2dDanielAlvira.pdf,406,250,30,Daniel Alvira [16751],Times-Roman,CENTER,406,160,20,2 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open2dLeeHuynh.pdf,406,250,30,Lee Huynh [13349],Times-Roman,CENTER,406,160,20,2 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open2dBenjaminArmitage.pdf,406,250,30,Benjamin Armitage [10749],Times-Roman,CENTER,406,160,20,2 Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open1dNathanaelEagle.pdf,406,250,30,Nathanael Eagle [18202],Times-Roman,CENTER,406,160,20,Sho Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open1dReinhardtMesserschmidt.pdf,406,250,30,Reinhardt Messerschmidt [14533],Times-Roman,CENTER,406,160,20,Sho Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open1dKellanWampler.pdf,406,250,30,Kellan Wampler [20197],Times-Roman,CENTER,406,160,20,Sho Dan,Times-Roman,CENTER
+2017USOpen.pdf,Open1kEricFeiveson.pdf,406,250,30,Eric Feiveson [15511],Times-Roman,CENTER,406,160,20,1 kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open1kNquaZiong.pdf,406,250,30,Nqua Ziong [20441],Times-Roman,CENTER,406,160,20,1 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open1kNoahDoss.pdf,406,250,30,Noah Doss [21250],Times-Roman,CENTER,406,160,20,1 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open2kGregoryPongracz.pdf,406,250,30,Gregory Pongracz [6922],Times-Roman,CENTER,406,160,20,2 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open2kJialeChen.pdf,406,250,30,Jiale Chen [21783],Times-Roman,CENTER,406,160,20,2 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open2kWilliamGunderbergJr.pdf,406,250,30,William Gunderberg Jr. [1314],Times-Roman,CENTER,406,160,20,2 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open3kJamesCarrier.pdf,406,250,30,James Carrier [22054],Times-Roman,CENTER,406,160,20,3 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open3kTedLin.pdf,406,250,30,Ted Lin [20823],Times-Roman,CENTER,406,160,20,3 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open3kJamesRFienup.pdf,406,250,30,James R. Fienup [1717],Times-Roman,CENTER,406,160,20,3 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open4kPaulKWheeler.pdf,406,250,30,Paul K. Wheeler [6677],Times-Roman,CENTER,406,160,20,4 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open4kShawnBlue.pdf,406,250,30,Shawn Blue [14622],Times-Roman,CENTER,406,160,20,4 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open4kMattPayton.pdf,406,250,30,Matt Payton [18195],Times-Roman,CENTER,406,160,20,4 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open5kEthanFrank.pdf,406,250,30,Ethan Frank [18132],Times-Roman,CENTER,406,160,20,5 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open5kLiyaLuk.pdf,406,250,30,Liya Luk [20948],Times-Roman,CENTER,406,160,20,5 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open5kBrettAndrewCastellanos.pdf,406,250,30,Brett Andrew Castellanos [22541],Times-Roman,CENTER,406,160,20,5 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open6kKevinSteadman.pdf,406,250,30,Kevin Steadman [23094],Times-Roman,CENTER,406,160,20,6 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open6kMarkFraser.pdf,406,250,30,Mark Fraser [9092],Times-Roman,CENTER,406,160,20,6 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open6kArunasRudvalis.pdf,406,250,30,Arunas Rudvalis [2000],Times-Roman,CENTER,406,160,20,6 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open7kSteveZhang.pdf,406,250,30,Steve Zhang [21498],Times-Roman,CENTER,406,160,20,7 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open7kTevisTsai.pdf,406,250,30,Tevis Tsai [21013],Times-Roman,CENTER,406,160,20,7 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open7kVivieTruong.pdf,406,250,30,Vivie Truong [21468],Times-Roman,CENTER,406,160,20,7 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open8kDarwinKim.pdf,406,250,30,Darwin Kim [21932],Times-Roman,CENTER,406,160,20,8 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open8kRickyHarper.pdf,406,250,30,Ricky Harper [22150],Times-Roman,CENTER,406,160,20,8 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open8kJungHoLee.pdf,406,250,30,Jung Ho Lee [22663],Times-Roman,CENTER,406,160,20,8 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open9kMarioEspinoza.pdf,406,250,30,Mario Espinoza [21952],Times-Roman,CENTER,406,160,20,9 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open9kLucasWuLu.pdf,406,250,30,Lucas Wu Lu [23076],Times-Roman,CENTER,406,160,20,9 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open9kGarrettSmith.pdf,406,250,30,Garret Smith [10261],Times-Roman,CENTER,406,160,20,9 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open10kJustinHLee.pdf,406,250,30,Justin H Lee [23027],Times-Roman,CENTER,406,160,20,10 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open10kSusannaPfeffer.pdf,406,250,30,Susanna Pfeffer [17542],Times-Roman,CENTER,406,160,20,10 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open10kRichardNewman.pdf,406,250,30,Richard Newman [15753],Times-Roman,CENTER,406,160,20,10 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open13kDonKarns.pdf,406,250,30,Don Karns [22685],Times-Roman,CENTER,406,160,20,13 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open14EthanZhou.pdf,406,250,30,Ethan Zhou [21036],Times-Roman,CENTER,406,160,20,14 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open16JoshuaJohnson.pdf,406,250,30,Joshua Johnson,Times-Roman,CENTER,406,160,20,16 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open20ZongrenHang.pdf,406,250,30,Zongren Hang [18562],Times-Roman,CENTER,406,160,20,20 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open20IsabellaLeong.pdf,406,250,30,Isabella Leong [23023],Times-Roman,CENTER,406,160,20,20 Kyu,Times-Roman,CENTER
+2017USOpen.pdf,Open20LujiaChen.pdf,406,250,30,Lujia Chen [21791],Times-Roman,CENTER,406,160,20,20 Kyu,Times-Roman,CENTER

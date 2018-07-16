@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1529803812877
+Bnd-LastModified: 1531434151410
 Build-Jdk: 1.8.0_102
 Built-By: jon_000
 Bundle-Description: Core Data library for AIRS, Ltd. products.
@@ -17,8 +17,9 @@ Export-Package: com.airsltd.core.data;uses:="com.airsltd.core,com.airslt
  .data.annotations";version="0.0.1",com.airsltd.core.data.annotations;ve
  rsion="0.0.1",com.airsltd.core.json;uses:="com.google.gson";version="0.
  0.1"
-Import-Package: com.airsltd.core,com.google.gson;version="[2.3,3)",com.g
- oogle.gson.stream;version="[2.3,3)",org.apache.commons.logging;version=
- "[1.2,2)",org.apache.tomcat.jdbc.pool;version="[8.0,9)"
+Import-Package: com.airsltd.core,com.airsltd.core.collections;version="[
+ 1.0,2)",com.google.gson;version="[2.3,3)",com.google.gson.stream;versio
+ n="[2.3,3)",javax.crypto,javax.crypto.spec,org.apache.commons.logging;v
+ ersion="[1.2,2)",org.apache.tomcat.jdbc.pool;version="[8.0,9)"
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
 Tool: Bnd-2.4.1.201501161923
