@@ -142,7 +142,7 @@ public abstract class LinkedModel<U extends IBlockData & IPersistentId, T extend
 		if (l_retVal == null) {
 			l_retVal = extendData(p_element);
 			f_data.put(p_element, l_retVal);
-		} else {
+		} else if (!getBlockProvider().getBlockData().contains(l_retVal)) {
 			l_retVal = modifyData(l_retVal);
 		}
 		return l_retVal;
