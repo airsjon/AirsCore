@@ -330,7 +330,7 @@ public abstract class BlockModel<T extends IBlockData, V> implements IModelListe
 	}
 
 	public boolean endBlock() {
-		return f_blockProvider.endBlock();
+		return endBlock(false);
 	}
 
 	public boolean endBlock(boolean p_useDeleteClause) {
