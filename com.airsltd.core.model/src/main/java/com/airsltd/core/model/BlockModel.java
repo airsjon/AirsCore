@@ -420,6 +420,7 @@ public abstract class BlockModel<T extends IBlockData, V> implements IModelListe
 		clearData(p_qualifier);
 		final Set<T> p_loadedData = loadModelData(getSelectionQuery(p_qualifier), getSelectionCallBack(p_qualifier),
 				getFieldsToLoad());
+		
 		addData(p_loadedData);
 		return true;
 	}

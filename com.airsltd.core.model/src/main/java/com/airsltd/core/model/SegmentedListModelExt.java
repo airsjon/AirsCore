@@ -189,6 +189,8 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 		final List<T> curList = getData().get(p_qualifier);
 		if (curList != null) {
 			curList.clear();
+		} else {
+			getData().put(p_qualifier, new ArrayList<T>());
 		}
 	}
 
