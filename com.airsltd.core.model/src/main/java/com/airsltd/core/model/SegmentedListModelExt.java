@@ -5,6 +5,7 @@ package com.airsltd.core.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -30,7 +31,7 @@ import com.airsltd.core.data.IBlockData;
 public abstract class SegmentedListModelExt<T extends IBlockData, V> extends BlockModel<T, V>
 		implements ISegmentedListModel<T, V> {
 
-	private final Map<V, List<T>> f_data = new HashMap<V, List<T>>();
+	private final Map<V, Set<T>> f_data = new HashMap<V, Set<T>>();
 	/**
 	 * When a database is completely loaded, we no longer need to load segments
 	 * even if they have no data.
@@ -69,7 +70,7 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 
 	private void addSegmentData(V p_segment, T p_data) {
 		if (!f_data.containsKey(p_segment)) {
-			f_data.put(p_segment, new ArrayList<T>());
+			f_data.put(p_segment, new HashSet<T>());
 		}
 		f_data.get(p_segment).add(p_data);
 	}
@@ -101,11 +102,11 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	 * Return all the segments that are included in p_data.
 	 *
 	 * @param p_data
-	 *            not null, a list of data that we are scanning for segments
+	 *            not null, a set of data that we are scanning for segments
 	 * @return a {@link List} of all the segments found in p_data.
 	 */
-	public List<V> allSegments(List<T> p_data) {
-		final List<V> l_retVal = new ArrayList<V>();
+	public Set<V> allSegments(Set<T> p_data) {
+		final Set<V> l_retVal = new HashSet<V>();
 		for (final T l_element : p_data) {
 			final V l_segment = getSegment(l_element);
 			if (!l_retVal.contains(l_segment)) {
@@ -123,13 +124,23 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	@Override
 	public List<T> getContentAsList(V p_selector) {
 		checkSegment(p_selector);
-		final List<T> l_retVal = f_data.get(p_selector);
-		return l_retVal == null ? new ArrayList<T>() : l_retVal;
+		final Set<T> l_retVal = f_data.get(p_selector);
+		return l_retVal == null ? new ArrayList<T>() : new ArrayList<T>(l_retVal);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.airsltd.core.model.BlockModel#getContentAsSet(java.lang.Object)
+	 */
+	@Override
+	public Set<T> getContentAsSet(V p_selector) {
+		checkSegment(p_selector);
+		Set<T> l_retVal = f_data.get(p_selector);
+		return l_retVal == null? new HashSet<T>(): l_retVal;
 	}
 
 	@Override
-	public List<T> getContentAsList() {
-		final List<T> l_retVal = new ArrayList<T>();
+	public Set<T> getContentAsList() {
+		final Set<T> l_retVal = new HashSet<T>();
 		for (final V l_key : f_data.keySet()) {
 			l_retVal.addAll(f_data.get(l_key));
 		}
@@ -137,7 +148,7 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	}
 
 	@Override
-	public void loadSegment(V p_selection, List<T> p_data) {
+	public void loadSegment(V p_selection, Set<T> p_data) {
 		f_data.put(p_selection, p_data);
 	}
 
@@ -145,7 +156,7 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	public void checkSegment(V p_selection) {
 		if (!f_data.containsKey(p_selection)) {
 			if (f_completeLoad) {
-				f_data.put(p_selection, new ArrayList<T>());
+				f_data.put(p_selection, new HashSet<T>());
 			} else {
 				loadModel(p_selection);
 			}
@@ -156,7 +167,7 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	 * @return the data
 	 */
 	@Override
-	public Map<V, List<T>> getData() {
+	public Map<V, Set<T>> getData() {
 		return f_data;
 	}
 
@@ -186,11 +197,11 @@ public abstract class SegmentedListModelExt<T extends IBlockData, V> extends Blo
 	 */
 	@Override
 	protected void clearData(V p_qualifier) {
-		final List<T> curList = getData().get(p_qualifier);
+		final Set<T> curList = getData().get(p_qualifier);
 		if (curList != null) {
 			curList.clear();
 		} else {
-			getData().put(p_qualifier, new ArrayList<T>());
+			getData().put(p_qualifier, new HashSet<T>());
 		}
 	}
 

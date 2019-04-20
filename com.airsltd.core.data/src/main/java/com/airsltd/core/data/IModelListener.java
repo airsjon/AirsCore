@@ -64,7 +64,7 @@ public interface IModelListener<T extends IBlockData> {
 	 * @param p_properties  not null, a Set of properties that have been changed
 	 * @param p_modifiedData  not null, the data that has been updated
 	 */
-	void notifyListeners(List<IUserInterfaceListener<T>> p_listeners, Set<String> p_properties, List<T> p_modifiedData);
+	void notifyListeners(List<IUserInterfaceListener<T>> p_listeners, Set<String> p_properties, Set<T> p_modifiedData);
 
 	/**
 	 * Verify if the data already exists in the data model. 

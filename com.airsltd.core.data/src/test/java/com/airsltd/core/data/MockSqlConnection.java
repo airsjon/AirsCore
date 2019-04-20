@@ -127,7 +127,7 @@ public abstract class MockSqlConnection  {
 			
 			@Override
 			public String getUrl() {
-				return "jdbc:mysql://192.168.0.35/"+MockSqlConnection.this.getDataBase()+"?zeroDateTimeBehavior=convertToNull" +
+				return "jdbc:mysql://debianintern.jshome.lan/"+MockSqlConnection.this.getDataBase()+"?zeroDateTimeBehavior=convertToNull" +
 						"&characterEncoding=utf-8&serverTimezone=UTC";
 			}
 			

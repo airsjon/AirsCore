@@ -12,6 +12,8 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 import org.apache.tomcat.jdbc.pool.PoolConfiguration;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 
+import com.airsltd.core.NotificationStatus;
+
 public class AirsPooledConnection {
 
 	private static final int MINIMUMIDLE = 2;
@@ -44,6 +46,11 @@ public class AirsPooledConnection {
 	private PoolConfiguration createPool(ISqlConnection p_connData) {
 		final PoolProperties l_retVal = new PoolProperties();
 		
+//		try {
+//			Class.forName(p_connData.getJdbcDriver());
+//		} catch (ClassNotFoundException e) {
+//			CoreInterface.getSystem().handleException("Unable to load JDBC - installation issue?", e, NotificationStatus.ERROR);
+//		}
 		l_retVal.setDriverClassName(p_connData.getJdbcDriver());
 		l_retVal.setUrl(p_connData.getUrl());
 		l_retVal.setUsername(p_connData.getUser());

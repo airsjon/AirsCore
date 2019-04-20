@@ -15,7 +15,6 @@ import java.sql.Statement;
 import org.apache.commons.logging.Log;
 
 import com.airsltd.core.IAirsUserData;
-import com.airsltd.core.ICoreInterface;
 import com.airsltd.core.data.CoreInterface;
 
 /**
@@ -26,7 +25,7 @@ import com.airsltd.core.data.CoreInterface;
  */
 public class ConnectionSetupTest extends BlockProviderSetupTest {
 
-	protected ICoreInterface m_system;
+	protected MockConnectionCore m_system;
 	protected Connection m_connection;
 	protected PreparedStatement m_ps;
 	protected ResultSet m_rs;
@@ -36,22 +35,25 @@ public class ConnectionSetupTest extends BlockProviderSetupTest {
 	public void setUp() throws Exception {
 		super.setUp();
 		// given
-		m_system = mock(ICoreInterface.class);
+		m_system = new MockConnectionCore();
 		CoreInterface.setSystem(m_system);
 		m_connection = mock(Connection.class);
 		m_ps = mock(PreparedStatement.class);
 		m_rs = mock(ResultSet.class);
 		m_state = mock(Statement.class);
 		m_userData = mock(IAirsUserData.class);
-		given(m_system.getUserData()).willReturn(m_userData);
-		given(m_system.getConnection()).willReturn(m_connection );
+		m_system.setConnection(m_connection);
+		m_system.setUserData(m_userData);
+		m_system.setLog(mock(Log.class));
+
 		given(m_connection.prepareStatement(anyString())).willReturn(m_ps);
 		given(m_connection.prepareStatement(anyString(),anyInt())).willReturn(m_ps);
 		given(m_connection.createStatement()).willReturn(m_state);
 		given(m_state.executeQuery(anyString())).willReturn(m_rs);
 		given(m_state.executeUpdate(anyString())).willReturn(4);
 		given(m_ps.executeQuery()).willReturn(m_rs);
-		given(m_system.getLog()).willReturn(mock(Log.class));
+		
 	}
+
 
 }

@@ -144,7 +144,8 @@ public class BlockModelTest extends MockSystemSetup {
 		// when
 		Set<String> l_properties = f_blockModel.prepareUpdateData(
 				new HashSet<BlockMod<MockDataSeg>>(Arrays.asList(new BlockMod<MockDataSeg>(l_object, new MockDataSeg(3, 2)))), l_listenerList);
-		f_blockModel.notifyListeners(l_listenerList, l_properties, Arrays.asList(l_object));
+		Set<MockDataSeg> l_set = new HashSet<MockDataSeg>(Arrays.asList(l_object));
+		f_blockModel.notifyListeners(l_listenerList, l_properties, l_set);
 		// then
 		assertEquals(1, l_listenerList.size());
 		assertEquals(l_listener, l_listenerList.get(0));

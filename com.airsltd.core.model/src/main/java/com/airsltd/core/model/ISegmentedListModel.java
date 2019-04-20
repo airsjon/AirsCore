@@ -3,8 +3,8 @@
  */
 package com.airsltd.core.model;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.airsltd.core.data.IBlockData;
 
@@ -27,7 +27,7 @@ public interface ISegmentedListModel<T extends IBlockData, V> {
 	 * @param p_selection  can be null, the data segment to be loaded.
 	 * @param p_data  not null, the list to store the data into.
 	 */
-	void loadSegment(V p_selection, List<T> p_data);
+	void loadSegment(V p_selection, Set<T> p_data);
 
 	/**
 	 * Determine if p_selection has been loaded.
@@ -46,7 +46,7 @@ public interface ISegmentedListModel<T extends IBlockData, V> {
 	 * 
 	 * @return a List of all the objects in the model.
 	 */
-	List<T> getContentAsList();
+	Set<T> getContentAsList();
 
 	/**
 	 * Return all the data in the model as a map.
@@ -55,6 +55,6 @@ public interface ISegmentedListModel<T extends IBlockData, V> {
 	 * 
 	 * @return a Map<V, List<T>> of all the data in the model.
 	 */
-	Map<V, List<T>> getData();
+	Map<V, Set<T>> getData();
 
 }

@@ -243,7 +243,7 @@ public abstract class BlockModel<T extends IBlockData, V> implements IModelListe
 
 	@Override
 	public void notifyListeners(List<IUserInterfaceListener<T>> p_listeners, Set<String> p_properties,
-			List<T> p_dataModified) {
+			Set<T> p_dataModified) {
 		for (final IUserInterfaceListener<T> l_listener : p_listeners) {
 			l_listener.modifyData(p_dataModified, p_properties);
 		}
