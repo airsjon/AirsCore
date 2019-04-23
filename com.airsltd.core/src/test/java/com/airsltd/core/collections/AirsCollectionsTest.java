@@ -173,4 +173,28 @@ public class AirsCollectionsTest {
 		assertTrue(l_array2.get(1).isProperty(TestEnum.THIRD));
 	}
 
+	@Test
+	public void testFindALL() {
+		// given
+		List<Integer> l_list = Arrays.asList(new Integer(3), new Integer(4), new Integer(54), new Integer(72), new Integer(5));
+		// when
+		List<Integer> l_found = AirsCollections.findAll(p -> { return (p & 1) == 0; }, l_list);
+		// then
+		assertTrue(l_found.contains(54));
+		assertTrue(l_found.contains(4));
+		assertTrue(l_found.contains(72));
+		assertEquals(3, l_found.size());
+	}
+	
+	@Test
+	public void testRemoveIf() {
+		// given
+		List<Integer> l_list = new ArrayList<Integer>(Arrays.asList(new Integer(3), new Integer(4), new Integer(54), new Integer(72), new Integer(5)));
+		// when
+		AirsCollections.removeIf(p -> { return (p & 1) == 0; }, l_list);
+		// then
+		assertTrue(l_list.contains(3));
+		assertTrue(l_list.contains(5));
+		assertEquals(2, l_list.size());
+	}
 }

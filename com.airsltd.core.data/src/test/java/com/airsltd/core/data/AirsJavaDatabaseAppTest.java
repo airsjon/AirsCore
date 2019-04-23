@@ -93,7 +93,7 @@ public class AirsJavaDatabaseAppTest {
 	}
 	
 	@Test
-	public void testGetConnection() {
+	public void testGetConnection() throws SQLException {
 		AirsPooledConnection l_oldConnection = AirsPooledConnection.getInstance();
 		try {
 			// given
@@ -102,12 +102,7 @@ public class AirsJavaDatabaseAppTest {
 			ISqlConnection l_sqlConnection = mock(ISqlConnection.class);
 			f_databaseConnection.initializeDatabase(l_sqlConnection );
 			Connection l_conn = mock(Connection.class);
-			try {
-				given(l_connection.getConnection()).willThrow(new SQLException()).willReturn(l_conn);
-			} catch (SQLException e) {
-				e.printStackTrace();
-				assertTrue(false);
-			}
+			given(l_connection.getConnection()).willThrow(new SQLException()).willReturn(l_conn);
 			// when
 			CoreInterface.getSystem().getConnection();
 			Connection l_returnedConn = CoreInterface.getSystem().getConnection();

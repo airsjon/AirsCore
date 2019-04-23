@@ -147,7 +147,7 @@ public class SegmentedListModelExtTest extends MockSystemSetup {
 		// when
 		f_byClass.checkSegment(l_object);
 		// then
-		assertEquals ( f_dataList, f_byClass.getContentAsList(l_object));
+		assertEquals ( f_dataList, f_byClass.getContentAsSet(l_object));
 	}
 
 	/**
@@ -212,16 +212,15 @@ public class SegmentedListModelExtTest extends MockSystemSetup {
 		f_byProvider.loadSegment(l_object1, f_dataList);
 		f_byProvider.loadSegment(l_object2, f_dataList2);
 		f_byProvider.loadSegment(l_object3, null);
+		Set<MockDataSeg> l_list = new HashSet<MockDataSeg>();
 		for (MockDataSeg l_data : f_dataList) {
 			l_data.f_object = l_object1;
+			l_list.add(l_data);
 		}
 		for (MockDataSeg l_data : f_dataList2) {
 			l_data.f_object = l_object2;
+			l_list.add(l_data);
 		}
-		Iterator<MockDataSeg> l_iterator = f_dataList.iterator();
-		Set<MockDataSeg> l_list = new HashSet<MockDataSeg>(Arrays.asList(l_iterator.next(),
-				l_iterator.next(),
-				l_iterator.next()));
 		// when
 		Set<Object> l_segments = f_byProvider.allSegments(l_list);
 		// then

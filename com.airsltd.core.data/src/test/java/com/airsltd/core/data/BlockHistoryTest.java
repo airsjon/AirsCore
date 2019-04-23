@@ -18,6 +18,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.airsltd.core.collections.AirsCollections;
 import com.airsltd.core.data.BlockHistory;
 import com.airsltd.core.data.BlockProvider;
 import com.airsltd.core.data.IBlockData;
@@ -54,15 +55,15 @@ public class BlockHistoryTest {
 	@Before
 	public void setUp() throws Exception {
 		// given
-		given(f_blockProvider.getBlockData()).willReturn(new HashSet<IBlockData>(f_mockAddData));
-		given(f_blockProvider.getBlockRemoveData()).willReturn(new HashSet<IBlockData>(f_mockRemoveData));
-		given(f_blockProvider.getBlockUpdateData()).willReturn(new HashSet<BlockMod<IBlockData>>(f_mockUpdateData));
 		f_mockAddData.add(new MockData(10, 100));
 		f_mockAddData.add(new MockData(20, 200));
 		f_mockAddData.add(new MockData(30, 300));
 		f_mockRemoveData.add(new MockData(15, 150));
 		f_mockRemoveData.add(new MockData(25, 250));
 		f_mockUpdateData.add(new BlockMod<IBlockData>(new MockData(12, 120), new MockData(13,130)));
+		given(f_blockProvider.getBlockData()).willReturn(new HashSet<IBlockData>(f_mockAddData));
+		given(f_blockProvider.getBlockRemoveData()).willReturn(new HashSet<IBlockData>(f_mockRemoveData));
+		given(f_blockProvider.getBlockUpdateData()).willReturn(new HashSet<BlockMod<IBlockData>>(f_mockUpdateData));
 	}
 
 	/**
@@ -85,9 +86,15 @@ public class BlockHistoryTest {
 		assertEquals(3,l_history.getAdds().size());
 		assertEquals(2,l_history.getRemoves().size());
 		assertEquals(1,l_history.getUpdates().size());
-		assertArrayEquals(f_mockAddData.subList(0, 3).toArray(),l_history.getAdds().toArray());
-		assertArrayEquals(f_mockRemoveData.toArray(),l_history.getRemoves().toArray());
-		assertArrayEquals(f_mockUpdateData.toArray(),l_history.getUpdates().toArray());
+		containsData(f_mockAddData.subList(0, 3), l_history.getAdds());
+		containsData(f_mockRemoveData, l_history.getRemoves());
+		containsData(f_mockUpdateData, l_history.getUpdates());
+	}
+
+	private void containsData(List<?> p_array, List<?> p_array2) {
+		for (Object l_current : p_array) {
+			assertNotNull(AirsCollections.lookFor(p -> l_current.equals(p), p_array2));
+		}
 	}
 
 	/**
@@ -98,7 +105,6 @@ public class BlockHistoryTest {
 		// given - see setup()
 		// when
 		BlockHistory<IBlockData> l_history = new BlockHistory<IBlockData>(f_blockProvider);
-		f_mockAddData.add(new MockData(40, 400));
 		// then
 		assertEquals(1,l_history.getUpdatesOriginals().size());
 		assertEquals(new MockData(12, 120), l_history.getUpdatesOriginals().get(0));

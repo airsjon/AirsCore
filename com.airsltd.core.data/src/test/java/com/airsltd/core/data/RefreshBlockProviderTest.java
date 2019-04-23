@@ -25,6 +25,9 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 			super(MockData.class);
 		}
 
+		/**
+		 * All data that has someHiddenData > 100 is redundant and does not need to be modified.
+		 */
 		@Override
 		protected DataState refreshData(MockData p_data, MockData p_oldData,
 				com.airsltd.core.data.RefreshBlockProvider.DataCheck p_state) {
@@ -75,12 +78,18 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 
 	}
 
-	MockData m_data1 = new MockData(1, 1);
+	MockData m_data1 = new MockData(1, 15);
 	MockData m_data2 = new MockData(2, 20);
+	/**
+	 * Data using m_data3 will be ignored because after refresh it will be found to be redundant.
+	 */
 	MockData m_data3 = new MockData(3, 250);
-	MockData m_data4 = new MockData(1, 1230);
-	MockData m_data5 = new MockData(2, 1230);
-	MockData m_data6 = new MockData(3, 1230);
+	MockData m_data4 = new MockData(1, 72);
+	MockData m_data5 = new MockData(2, 120);
+	MockData m_data6 = new MockData(3, 140);
+	MockData m_data7 = new MockData(7, 15);
+	MockData m_data8 = new MockData(8, 20);
+	MockData m_data9 = new MockData(9, 300);
 	
 	MockRefreshBlockProvider m_provider;
 	
@@ -98,7 +107,7 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		given(CoreInterface.getSystem().getConnection()).willReturn(m_connection);
 		m_provider = new MockRefreshBlockProvider();
 		// model is up to date so do the modification
-		m_data1.someHiddenData = 1;
+		m_data1.someHiddenData = 15;
 		m_data1.f_auto = true;
 		// model is not up to date but we still need to do modification
 		m_data2.someHiddenData = 15;
@@ -107,6 +116,17 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		m_data3.someHiddenData = 225;
 		m_data3.f_auto = true;
 		m_data4.f_auto = true;
+		m_data5.f_auto = true;
+		m_data6.f_auto = true;
+		m_data7.f_auto = true;
+		m_data8.f_auto = true;
+		m_data9.f_auto = true;
+		// model is up to date so do the modification
+		m_data7.someHiddenData = 1;
+		// model is not up to date but we still need to do modification
+		m_data8.someHiddenData = 15;
+		// model is not up to date and the modification has already been done or marked as an issue
+		m_data9.someHiddenData = 225;
 	}
 
 	@After
@@ -144,15 +164,18 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		}
 		m_provider.startBlock();
 		// when
+		// test add data 1
 		assertTrue(m_provider.addContent(m_data1));
+		// test add data 20
 		assertTrue(m_provider.addContent(m_data2));
+		// ignored data (assumes it has been found in the persistent store.)
 		assertTrue(m_provider.addContent(m_data3));
-		assertTrue(m_provider.removeContent(m_data1));
-		assertTrue(m_provider.removeContent(m_data2));
-		assertTrue(m_provider.removeContent(m_data3));
-		assertTrue(m_provider.updateContent(m_data1,m_data4));
-		assertTrue(m_provider.updateContent(m_data2,m_data4));
-		assertTrue(m_provider.updateContent(m_data3,m_data4));
+		// remove 8
+		assertTrue(m_provider.removeContent(m_data7));
+		// remove 9
+		assertTrue(m_provider.removeContent(m_data8));
+		// ignore data (assume it has been removed from persistent store already.)
+		assertTrue(m_provider.removeContent(m_data9));
 		MockData m_data5 = new MockData(1, 812);
 		m_data5.f_auto=true;
 		assertTrue(m_provider.updateContent(m_data1, m_data5));
@@ -162,9 +185,9 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		assertEquals(m_data2.someHiddenData, m_data2.someData);
 		assertEquals(m_data3.someHiddenData, m_data3.someData);
 		try {
-			verify(m_connection).prepareStatement("INSERT INTO `mockTable` (data) VALUES (1), (20), (1230)", 1);
-			verify(m_state).executeUpdate("DELETE FROM `mockTable` WHERE (id=1 AND f_published=0) or (id=2 AND f_published=0)");
-			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=1230 WHERE id=1");
+			verify(m_connection).prepareStatement("INSERT INTO `mockTable` (data) VALUES (15), (20)", 1);
+			verify(m_state).executeUpdate("DELETE FROM `mockTable` WHERE (id=7 AND f_published=0) or (id=8 AND f_published=0)");
+			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=812 WHERE id=1");
 		} catch (SQLException exception) {
 		} 
 	}
@@ -212,7 +235,7 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		assertEquals(m_data2.someHiddenData, m_data2.someData);
 		assertEquals(m_data3.someHiddenData, m_data3.someData);
 		try {
-			verify(m_connection).prepareStatement("INSERT INTO `mockTable` (data) VALUES (1)", 1);
+			verify(m_connection).prepareStatement("INSERT INTO `mockTable` (data) VALUES (15)", 1);
 			verify(m_connection).prepareStatement("INSERT INTO `mockTable` (data) VALUES (20)", 1);
 			verify(m_connection,never()).prepareStatement("INSERT INTO `mockTable` (data) VALUES (250)", 1);
 		} catch (SQLException exception) {
@@ -232,9 +255,9 @@ public class RefreshBlockProviderTest extends ConnectionSetup {
 		assertEquals(m_data2.someHiddenData, m_data2.someData);
 		assertEquals(m_data3.someHiddenData, m_data3.someData);
 		try {
-			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=1230 WHERE id=1");
-			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=1230 WHERE id=2");
-			verify(m_connection, never()).prepareStatement("UPDATE `mockTable` SET data=1230 WHERE id=3");
+			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=72 WHERE id=1");
+			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=120 WHERE id=2");
+			verify(m_connection, never()).prepareStatement("UPDATE `mockTable` SET data=140 WHERE id=3");
 		} catch (SQLException exception) {
 		}
 	}

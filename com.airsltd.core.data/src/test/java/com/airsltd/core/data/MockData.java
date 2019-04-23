@@ -8,11 +8,23 @@ import java.util.List;
 
 import com.airsltd.core.data.IBlockData;
 
+/**
+ * Mock Data used to test overwrites of existing data.
+ * 
+ * @author jon_000
+ *
+ */
 public class MockData implements INamed, IBlockData, IPersistentId {
 	private static final String[] FIELDNAMES = new String[] { "Id", "Data" };
 	private static final IBlockField<?> s_mockField = mock(IBlockField.class);
 	public int someId;
+	/**
+	 * Value to represent the store point of the data in the model.
+	 */
 	public int someData;
+	/**
+	 * Value to represent the current store point of data on the server.
+	 */
 	public int someHiddenData;
 	public boolean f_auto;
 

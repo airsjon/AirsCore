@@ -214,11 +214,11 @@ public class BlockModelTest extends MockSystemSetup {
 	@Test
 	public void testEndBlock() {
 		// given
-		given(f_provider.endBlock()).willReturn(true);
+		given(f_provider.endBlock(anyBoolean())).willReturn(true);
 		// when
 		assertTrue(f_blockModel.endBlock());
 		// then
-		verify(f_provider).endBlock();
+		verify(f_provider).endBlock(anyBoolean());
 	}
 
 	@Test

@@ -5,6 +5,7 @@ package com.airsltd.core.collections;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -161,9 +162,10 @@ public class AirsCollections {
 	}
 	
 	public static <T> void removeIf(BooleanFunction<T> p_testor, Iterable<T> p_theList) {
-		for (T l_item : p_theList) {
-			if (p_testor.apply(l_item)) {
-
+		Iterator<T> l_iter = p_theList.iterator();
+		while (l_iter.hasNext()) {
+			if (p_testor.apply(l_iter.next())) {
+				l_iter.remove();
 			}
 		}
 	}

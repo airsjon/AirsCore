@@ -203,7 +203,7 @@ public abstract class RefreshBlockProvider<T extends IBlockData> extends BlockPr
 	 * Has the data on the server side changed from what the client has locally
 	 * for the list of T.
 	 * <p>
-	 * Data may be granualized for updates, but current (and projected)
+	 * Data may be granulized for updates, but current (and projected)
 	 * implementations do not make use of this feature.
 	 * 
 	 * @param p_data
@@ -242,10 +242,9 @@ public abstract class RefreshBlockProvider<T extends IBlockData> extends BlockPr
 	 *            not null, this list is modified and will contain all data that
 	 *            is going to be updated (added, removed, changed)
 	 * @param p_dataNewVector
-	 *            not null, this list is modified and will contain all the data
-	 *            that is being changed
+	 *            not null, this list is modified and will contain all updates new values.
 	 * @param p_check
-	 *            not null, this list will tell the refresh system how the data
+	 *            not null, this list of DataCheck will tell the refresh system how the data
 	 *            in p_dataVector is being updated.
 	 */
 	protected void loadDataChecks(List<T> p_dataVector, List<T> p_dataNewVector, List<DataCheck> p_check) {

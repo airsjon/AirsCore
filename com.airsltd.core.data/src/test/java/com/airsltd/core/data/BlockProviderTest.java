@@ -196,11 +196,11 @@ public class BlockProviderTest extends ConnectionSetup {
 		
 		// when
 		// then
-		assertEquals(l_oldValue.hashCode()+~l_newValue.hashCode(),l_tester.hashCode());
-		assertEquals(l_oldValue.hashCode()+~l_newValue.hashCode(),l_tester2.hashCode());
-		assertEquals(l_oldValue2.hashCode()+~l_newValue.hashCode(),l_tester3.hashCode());
-		assertEquals(l_oldValue.hashCode()+~l_newValue2.hashCode(),l_tester4.hashCode());
-		assertEquals(~l_newValue.hashCode(),l_tester5.hashCode());
+		assertEquals(l_oldValue.hashCode(),l_tester.hashCode());
+		assertEquals(l_oldValue.hashCode(),l_tester2.hashCode());
+		assertEquals(l_oldValue2.hashCode(),l_tester3.hashCode());
+		assertEquals(l_oldValue.hashCode(),l_tester4.hashCode());
+		assertEquals(0,l_tester5.hashCode());
 		assertEquals(l_oldValue.hashCode(),l_tester6.hashCode());
 
 	}
@@ -576,11 +576,9 @@ public class BlockProviderTest extends ConnectionSetup {
 			verify(m_connection).prepareStatement("UPDATE `mockTable` SET data=90 WHERE id=4");
 			verify(m_connection).prepareStatement(eq("INSERT INTO `mockTable` (id,data) VALUES (1,10), (4,40)"), anyInt());
 			if (p_loggingOn) {
-				verify(CoreInterface.getSystem()).debug(eq(MockData.class), eq("/debug/block"), startsWith("Modifying 3 records in mockTable"));
-				verify(CoreInterface.getSystem(),times(2)).debug(eq(MockData.class), eq("/debug/block"), startsWith("Deleting 1 records in mockTable"));
+				verify(CoreInterface.getSystem()).debug(eq(MockData.class), eq("/debug/block"), eq("SQL - Adding data"));
 			} else {
-				verify(CoreInterface.getSystem(),never()).debug(eq(MockData.class), eq("/debug/block"), startsWith("Modifying 3 records in mockTable"));
-				verify(CoreInterface.getSystem(),never()).debug(eq(MockData.class), eq("/debug/block"), startsWith("Deleting 1 records in mockTable"));
+				verify(CoreInterface.getSystem(),never()).debug(eq(MockData.class), eq("/debug/block"), eq("SQL - Adding data"));
 			}
 			verify(m_modelListener).blockUIStart();
 			verify(m_modelListener).addData(anySetOf(MockData.class));
