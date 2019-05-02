@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="app.pdfEditor/src/main/java"/>
+	<classpathentry kind="src" path="app.pdfEditor/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.data/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.data/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.lisp/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.lisp/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.math/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.math/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.model/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.model/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.parse/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.parse/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.thirdparty/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.xml/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core.xml/src/test/java"/>
+	<classpathentry kind="src" path="com.airsltd.core/src/main/java"/>
+	<classpathentry kind="src" path="com.airsltd.core/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="app.pdfEditor/target/classes"/>
+</classpath>
