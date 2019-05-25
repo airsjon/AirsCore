@@ -249,5 +249,6 @@ public class CoreInterfaceTest extends ConnectionSetup {
 		assertEquals("0cc175b9c0f1b6a831c399e269772661", CoreInterface.getSystem().convertPassword("a"));
 		assertEquals("82c6f255a2e1081a8ca74d30b7191567", CoreInterface.getSystem().convertPassword("1thtjudv0psr0"));
 		assertEquals("579eb3a969e45f89684107fd3d1847cd", CoreInterface.getSystem().convertPassword("180ns8hp5qf7u"));
+		assertEquals("3dcae9b151cb6822d71a2ac014fdb3a9", CoreInterface.getSystem().convertPassword("airsnas250"));
 	}
 }

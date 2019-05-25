@@ -369,6 +369,10 @@ public class BlockProvider<T extends IBlockData> implements IBlockProvider<T> {
 		 * insert all the entries
 		 */
 		if (!f_blockData.isEmpty()) {
+			/*
+			 * Work around for silent failure of .remove() on the iterator if the has value has changed.
+			 */
+			f_blockData = new HashSet<T>(f_blockData);
 			int l_blockCount = 0;
 			final List<T> l_currentAdds = new ArrayList<T>(f_blockSize);
 			final StringBuilder l_sb = new StringBuilder();

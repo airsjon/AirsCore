@@ -259,7 +259,10 @@ public interface ICoreInterface {
 	Long logTimedEventStart(boolean p_b, String p_string);
 
 	/**
-	 *
+	 * Log the end of an event.
+	 * <p>
+	 * Used to track time usage in traces.
+	 * 
 	 * @param p_b
 	 * @param p_string
 	 * @param p_startTime
